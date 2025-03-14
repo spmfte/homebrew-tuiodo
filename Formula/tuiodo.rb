@@ -15,7 +15,7 @@ class Tuiodo < Formula
       -s -w
       -X main.Version=#{version}
       -X main.BuildTime=#{Time.now.utc.strftime("%Y-%m-%dT%H:%M:%SZ")}
-      -X main.GitCommit=#{Utils.git_short_head}
+      -X main.GitCommit=v#{version}
     ].join(" ")
 
     system "go", "build", *std_go_args(ldflags: ldflags)
