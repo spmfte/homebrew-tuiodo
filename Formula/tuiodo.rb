@@ -1,24 +1,37 @@
 class Tuiodo < Formula
   desc "A modern terminal task manager with extensive customization"
   homepage "https://github.com/spmfte/tuiodo"
-  url "https://github.com/spmfte/tuiodo/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "0ed0dc3dcb863aa2f3ca79748e853db27f1ff61ab01aa498f778eb184159c7e2"
-  version "1.1.0"
+  head "https://github.com/spmfte/tuiodo.git", branch: "master"
+  version "1.1.1"
   license "MIT"
 
-  head "https://github.com/spmfte/tuiodo.git", branch: "master"
+  # Additional metadata for the formula
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.Version=#{version}
-      -X main.BuildTime=#{Time.now.utc.strftime("%Y-%m-%dT%H:%M:%SZ")}
-      -X main.GitCommit=v#{version}
-    ].join(" ")
+    system "go", "build", *std_go_args(ldflags: "-s -w")
+  end
 
-    system "go", "build", *std_go_args(ldflags: ldflags)
+  def caveats
+    <<~EOS
+      TUIODO has been installed!
+      
+      Run `tuiodo` to start managing your tasks.
+      For help and options, use `tuiodo --help`
+      
+      New in v1.1.1:
+      - Enhanced task expansion UI with better formatting
+      - Improved spacebar functionality for task completion
+      - Circular cursor navigation (wraps around list edges)
+      - Delete confirmation with undo capability
+      - Advanced metadata tag support (@due, @tag, @status)
+      - Color-coded progress bar in status line
+    EOS
   end
 
   test do
