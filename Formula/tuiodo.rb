@@ -2,7 +2,7 @@ class Tuiodo < Formula
   desc "A modern terminal task manager with extensive customization"
   homepage "https://github.com/spmfte/tuiodo"
   url "https://github.com/spmfte/tuiodo/archive/refs/tags/v1.1.4.tar.gz"
-  sha256 "942fc1d039d6bed162295e02a243f2bf336b06042cb8d7aa81b6bb382d15cc20"
+  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   license "MIT"
   head "https://github.com/spmfte/tuiodo.git", branch: "master"
 
