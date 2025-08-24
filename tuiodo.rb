@@ -12,16 +12,16 @@ class Tuiodo < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/spmfte/tuiodo/releases/download/v1.1.4/tuiodo-Darwin-x86_64.tar.gz"
-      sha256 "3718d1980d2dae47f940b15bd761bd97afec887d82be10f1d798e24f7cc12f58"
+      url "https://github.com/spmfte/tuiodo/archive/refs/tags/v1.1.4.tar.gz"
+      sha256 "f9f5da26dfb126027e691cd211e8e359fb94872516a8588cb0fe559452c4fe95"
 
       def install
         bin.install "tuiodo"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/spmfte/tuiodo/releases/download/v1.1.4/tuiodo-Darwin-arm64.tar.gz"
-      sha256 "192e7a555ad48aeb9449f261825d319056b880a4e054ecb0695e7081a0c89bf3"
+      url "https://github.com/spmfte/tuiodo/archive/refs/tags/v1.1.4.tar.gz"
+      sha256 "666aa7be7c387cde6db280f03779461ac346b640322c4fc545f7204fb9a89963"
 
       def install
         bin.install "tuiodo"
@@ -31,15 +31,15 @@ class Tuiodo < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/spmfte/tuiodo/releases/download/v1.1.4/tuiodo-Linux-x86_64.tar.gz"
-      sha256 "2f0bc60e1e76e53fbfc1d39ea51dbed61af04d4ed22c7039fad8f762c36da08f"
+      url "https://github.com/spmfte/tuiodo/archive/refs/tags/v1.1.4.tar.gz"
+      sha256 "abc2d921517bdfb65143b4f491078bc805693e08f1ed9f7964650f71b0f833dc"
       def install
         bin.install "tuiodo"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/spmfte/tuiodo/releases/download/v1.1.4/tuiodo-Linux-arm64.tar.gz"
-      sha256 "b4bd2e3dab7884e9a9d239aff6f9fbc177caf1b8dd28ecb1e9e86b1e150c9b37"
+      url "https://github.com/spmfte/tuiodo/archive/refs/tags/v1.1.4.tar.gz"
+      sha256 "66d8440ad722d6433832870012171aa4fa21baf752825fcf8d43f35106ebe8bc"
       def install
         bin.install "tuiodo"
       end
